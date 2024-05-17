@@ -1,0 +1,38 @@
+import React from 'react';
+import { Link } from 'react-router-dom'; // Assuming you're using React Router for navigation
+import './landing.css'; // Import your CSS file
+import logoImg from './logo/dolfinlogoborder.png'; // Import your logo image
+
+const LandingPage = () => {
+    return (
+        <div>
+            <section className="header">
+                <div className="header-content">
+                    <footer className="container">
+                        {/* Your footer content here */}
+                    </footer>
+                </div>
+            </section>
+
+            <div className="container">
+                <div className="content-main row">
+                    <div className="landing-content col-lg-6 col-md-12 col-sm-12">
+                        <h3 className="landing-subheading">Join <span style={{ color: '#343A40' }}>DolFin</span> Today and</h3>
+                        <h1 className="landing-heading">Start <img id="logoImg" src={logoImg} alt="favicon" />Saving</h1>
+                    </div>
+
+                    <div className="landing-blob col-lg-6 col-md-12 col-sm-12">
+                        <div className="blob-content">
+                            <div className="landing-buttons">
+                                <Link className="btn btn-primary" to="/register" role="button">JOIN NOW</Link>
+                                <Link className="btn sec-button" to="/login" role="button"> <span style={{ color: '#fafafe' }}>or</span> log in here</Link>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default LandingPage;

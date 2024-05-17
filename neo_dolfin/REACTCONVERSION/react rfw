@@ -1,0 +1,70 @@
+import React, { useState } from 'react';
+
+const FinancialWellbeingSurvey = () => {
+    // State to manage checkbox values
+    const [checkboxValues, setCheckboxValues] = useState({
+        q1: 0,
+        q2: 0,
+        q3: 0,
+        q4: 0,
+        q5: 0,
+        q6: 0,
+        q7: 0,
+        q8: 0,
+        q9: 0,
+        q10: 0
+    });
+
+    // Function to handle checkbox click
+    const handleCheckboxChange = (event, question) => {
+        const { value } = event.target;
+        setCheckboxValues({ ...checkboxValues, [question]: parseInt(value) });
+    };
+
+    // Function to calculate survey result
+    const calculateResult = () => {
+        // Calculate total score
+        const totalScore = Object.values(checkboxValues).reduce((acc, cur) => acc + cur, 0);
+        // Perform actions based on total score
+        // Example: Send data to server, show result to user, etc.
+        console.log('Total Score:', totalScore);
+    };
+
+    return (
+        <div>
+            <h1>Financial Wellbeing Survey</h1>
+            <div className="survey_content">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>How well do the following statements describe you or your situation?</th>
+                            <th>Completely</th>
+                            <th>Very Well</th>
+                            <th>Somewhat</th>
+                            <th>Very Little</th>
+                            <th>Not at All</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1. I can enjoy life because of the way I’m managing my money</td>
+                            {[4, 3, 2, 1, 0].map(value => (
+                                <td key={value}>
+                                    <input type="checkbox" name="q1" value={value} onChange={(e) => handleCheckboxChange(e, 'q1')} />
+                                </td>
+                            ))}
+                        </tr>
+                        {/* Repeat similar structure for other questions */}
+                    </tbody>
+                </table>
+                <br />
+                <button onClick={calculateResult}>Submit Survey</button>
+            </div>
+        </div>
+    );
+};
+
+export default FinancialWellbeingSurvey;
+// in this react component State is used to manage the values of checkboxes.
+//Each checkbox's value is stored in the state, and the handleCheckboxChange function updates the state accordingly.
+//When the "Submit Survey" button is clicked, the calculateResult function is called, which could perform further actions like sending the data to a server or showing the result to the user.

@@ -1,0 +1,30 @@
+import React from 'react';
+import './Main.css'; // Import your CSS files
+
+const DataVisualizations = ({ chartData }) => {
+  return (
+    <div>
+      {/* Navbar component */}
+      {/* Include your navbar component here */}
+      <header>
+        <h1>Here's how Dolfin's tracking with customers</h1>
+      </header>
+      <div>
+        {/* Render chart containers */}
+        {Object.entries(chartData).map(([category, chart]) => (
+          <div key={category} className="chart-container">
+            <h2>{category}</h2>
+            <img src={`data:image/png;base64,${chart}`} alt={`${category} Chart`} />
+          </div>
+        ))}
+      </div>
+      <footer>
+        {/* Footer component */}
+        {/* Include your footer component here */}
+      </footer>
+    </div>
+  );
+};
+
+export default DataVisualizations;
+

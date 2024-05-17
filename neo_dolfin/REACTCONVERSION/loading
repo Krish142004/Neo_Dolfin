@@ -1,0 +1,19 @@
+import React, { useEffect } from 'react';
+import './LoadingPage.css'; // Import your CSS file
+
+const LoadingPage = () => {
+    useEffect(() => {
+        setTimeout(() => {
+            window.location.href = '../'; // Redirect after certain time
+        }, 3000); // 3 seconds delay, you can adjust as needed
+    }, []);
+
+    return (
+        <div className="loader-container">
+            <div className="loader"></div>
+            <p className="loading-text">Loading your page</p>
+        </div>
+    );
+};
+
+export default LoadingPage;

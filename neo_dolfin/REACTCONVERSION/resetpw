@@ -1,0 +1,38 @@
+import React from 'react';
+import './Main.css'; // Import your CSS files
+
+const ResetPassword = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+  };
+
+  return (
+    <div>
+      {/* Navbar component */}
+      <div className="container" id="mainTitleArea">
+        <div className="row">
+          <div className="col">
+            <h1 id="articleTitle">Reset Password</h1>
+          </div>
+        </div>
+        <svg height="12" id="articleBreak" width="100%" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#343A40" height="12" width="100%" />
+        </svg>
+      </div>
+      {/* User Account Details form */}
+      <div className="container">
+        <h2>User Account Details</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="password">New Password:</label>
+          <input type="password" id="password" name="password" required />
+          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <input type="password" id="confirmPassword" name="confirmPassword" required />
+          <button type="submit">Update Details</button>
+        </form>
+      </div>
+    </div>
+  );
+};
+
+export default ResetPassword;

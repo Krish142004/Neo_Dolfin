@@ -1,0 +1,68 @@
+import React from 'react';
+import './News.css'; // Import your CSS file
+import Navbar from './components/Navbar'; // Import your Navbar component
+import Footer from './components/Footer'; // Import your Footer component
+
+const News = () => {
+  // Define your JSX content
+  return (
+    <>
+      {/* Render Navbar component */}
+      <Navbar />
+
+      <div id="mainBody">
+        <div id="headerSection" className="p-5">
+          <div id="headerGreeting" className="display-1 text-left ">Welcome Back!</div>
+          <div id="headerTitle" className="display-1 text-left ">NEWS</div>
+          <div id="headerTitleShadow" className="display-1 text-left " style={{ zIndex: -1 }}>NEWS</div>
+        </div>
+
+        <div id="rectangle"></div>
+
+        <div id="mainNewsColumns" className="container">
+          {/* Navigation Bar */}
+          <nav id="custom-navbar" className="navbar navbar-expand-lg navbar-light bg-grey">
+            <a className="navbar-brand" href="#"></a>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span className="navbar-toggler-icon"></span>
+            </button>
+            <div className="collapse navbar-collapse" id="navbarNav">
+              <ul className="navbar-nav">
+                <li id="navbar-nav-item" className="nav-item">
+                  <button id="btn-primary" className="btn btn-primary navbar-btn btn-xl" onClick={() => filterSelection('archive')}>Archive</button>
+                </li>
+                <li id="navbar-nav-item" className="nav-item">
+                  <button id="btn-success" className="btn btn-success navbar-btn btn-xl pressed-btn" onClick={() => filterSelection('all')}>All</button>
+                </li>
+                <li id="navbar-nav-item" className="nav-item">
+                  <button id="btn-danger" className="btn btn-danger navbar-btn btn-xl" onClick={() => filterSelection('june')}>June</button>
+                </li>
+                <li id="navbar-nav-item" className="nav-item">
+                  <button id="btn-next" className="btn btn-next navbar-btn btn-xl" onClick={() => filterSelection('july')}>July</button>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div className="container custom-container mt-4">
+            {/* First Row with Two Boxes */}
+            <div className="row mt-4">
+              {/* Render your card components here */}
+            </div>
+
+            {/* Second Row with Two Boxes */}
+            <div className="row mt-4">
+              {/* Render your card components here */}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Render your Footer component */}
+      <Footer />
+    </>
+  );
+};
+
+export default News;

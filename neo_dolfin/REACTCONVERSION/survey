@@ -1,0 +1,40 @@
+import React from 'react';
+import './Main.css'; // Import your CSS files
+
+const Survey = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+  };
+
+  return (
+    <div>
+      {/* Navbar component */}
+      {/* Include your navbar component here */}
+      <p style={{ color: 'rgb(255, 0, 0)', fontFamily: 'courier', fontSize: '50%' }}><strong>{'{msg}'}</strong></p>
+      <div id="mainBody">
+        <div id="headerSection" className="p-5">
+          <h1 id="headerTitle" className="display-1 text-center">Survey</h1>
+        </div>
+        <svg id="rectangleDivider" width="100%" height="12" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="100%" height="12" fill="#343A40" />
+        </svg>
+      </div>
+      <div id="mainNewsColumns" className="container">
+        <div className="row" style={{ minHeight: '700px' }}>
+          <div className="popup" id="feedbackPopup">
+            <form id="surveyForm" onSubmit={handleSubmit}>
+              {/* Survey questions and input elements */}
+            </form>
+          </div>
+        </div>
+      </div>
+      {/* Chatbot component */}
+      {/* Include your chatbot component here */}
+      {/* Footer component */}
+      {/* Include your footer component here */}
+    </div>
+  );
+};
+
+export default Survey;

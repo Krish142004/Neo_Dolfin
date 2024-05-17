@@ -1,0 +1,80 @@
+import React from 'react';
+import './Login.css'; // Import your CSS file
+
+const Login = () => {
+    return (
+        <div className="container pb-3">
+            <div className="row justify-content-around g-0 p-0">
+                <div className="col-sm-8 col-md-7 col-xl-5 col-2 d-flex justify-content-center">
+                    <div className="container_left">
+                        <img src="../static/img/style.png" alt="style" className="style" />
+                        <div className="input_area">
+                            <form method="POST" action="/login">
+                                <input type="text" name="email" className="form-control" placeholder="Email" required />
+                                <input type="password" name="password" className="form-control" placeholder="Password" required />
+                                <div className="link-container">
+                                    <a href="./register" className="auth-link">
+                                        <div>New to DolFin?</div>
+                                        <div>Register Here</div>
+                                    </a>
+                                    <a href="#" className="auth-link">Forgot Password?</a>
+                                </div>
+                                <input type="submit" className="btn float-right" value="Login" style={{ fontWeight: 'bold' }} />
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div className="col-sm-12 col-md-9 col-xl-6 offset-1 d-flex justify-content-center">
+                    <div className="container container_right">
+                        <div className="row">
+                            <div className="text_top">Welcome Back!</div>
+                            <div className="text_mid">Your journey towards smarter financial management continues here.</div>
+                        </div>
+                        <div className="row">
+                            <div className="text_tips_bg">
+                                <div className="tips_title">Quick Tips:</div>
+                                <div className="tips_container mt-5">
+                                    <div id="card-container" className="card-deck card-container">
+                                        {/* Card 1 */}
+                                        <div className="card card-sm">
+                                            <img src="/static/img/tip1.png" className="card-img-top" alt="Card Image 1" />
+                                            <div className="card-body">
+                                                <p className="card-text">Check your updated financial summaries and reports.</p>
+                                            </div>
+                                        </div>
+                                        {/* Card 2 */}
+                                        <div className="card card-sm" style={{ display: 'none' }}>
+                                            <img src="/static/img/tip2.png" className="card-img-top" alt="Card Image 2" />
+                                            <div className="card-body">
+                                                <p className="card-text">Ask DolFin, your AI chatbot, for the latest insights on your spending and savings.</p>
+                                            </div>
+                                        </div>
+                                        {/* Card 3 */}
+                                        <div className="card card-sm" style={{ display: 'none' }}>
+                                            <img src="/static/img/tip3.png" className="card-img-top" alt="Card Image 3" />
+                                            <div className="card-body">
+                                                <p className="card-text">Explore new features and tools designed to enhance your financial understanding.</p>
+                                            </div>
+                                        </div>
+                                        {/* Navigation Buttons */}
+                                        <button className="btn btn-primary rounded-circle nav-btn nav-btn-left" onClick={() => showCard('prev')}>&lt;</button>
+                                        <button className="btn btn-primary rounded-circle nav-btn nav-btn-right" onClick={() => showCard('next')}>&gt;</button>
+                                        {/* Pagination Dots */}
+                                        <ul className="pagination-dots">
+                                            <li className="dot active" onClick={() => goToCard(0)}></li>
+                                            <li className="dot" onClick={() => goToCard(1)}></li>
+                                            <li className="dot" onClick={() => goToCard(2)}></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <img src="../static/img/dolfin_icon_v2 2.png" alt="dolfin" className="dolfin" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
+export default Login;

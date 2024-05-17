@@ -1,0 +1,65 @@
+import React from 'react';
+import './Main.css'; // Import your CSS files
+
+const Register = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    // Handle form submission logic here
+  };
+
+  return (
+    <div className="container p-4" style={{ maxWidth: '85%', overflow: 'visible' }}>
+      <div className="row justify-content-center g-0 p-0">
+        <div className="col-7 col-lg-7 col-md-12 col-sm-12 d-flex justify-content-center" align="center">
+          <div className="container_left" style={{ zIndex: 1 }}>
+            <div className="input_area">
+              <h1 className="Title_signup">DolFin</h1>
+              <h2 className="Subtitle">Empowering Your Financial Journey</h2>
+              <div className="row align-items-center">
+                <div className="col-2 col-lg-2 col-md-1 col-sm-1">
+                  <button style={{ border: 'none' }}>
+                    <img src="../static/img/sign up/slide-left.png" className="img-fluid" alt="previous" />
+                  </button>
+                </div>
+                <div className="col-8 col-lg-8 col-md-10 col-sm-10">
+                  <form onSubmit={handleSubmit}>
+                    <div className="tab">
+                      {/* Form fields */}
+                    </div>
+                  </form>
+                </div>
+              </div>
+              {/* Social login */}
+            </div>
+          </div>
+        </div>
+        <div className="col-5 col-lg-5 col-md-12 col-sm-12 d-flex justify-content-center">
+          <div className="container">
+            <div className="row">
+              <div className="col-12" style={{ position: 'absolute', top: '275px' }}>
+                <img src="../static/img/sign up/cover_style.png" alt="cover" className="top-right-image" />
+              </div>
+              <div className="container_right">
+                <div className="col-12">
+                  <div className="text_top" id="text_top_right" style={{ top: '300%' }}>
+                    Your Journey Towards Smarter Financial Management Starts Here.
+                  </div>
+                </div>
+                <div className="col-12" style={{ position: 'absolute', top: '400px' }}>
+                  <div className="text_bg">
+                    <ul className="text_mid">
+                      {/* Text content */}
+                    </ul>
+                    <img src="../static/img/dolfin_icon_v2 2.png" alt="dolfin" id="dol-float" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Register;
